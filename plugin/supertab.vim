@@ -973,8 +973,8 @@ endfunction " }}}
 
   inoremap <silent> <c-x> <c-r>=<SID>ManualCompletionEnter()<cr>
 
-  imap <script> <Plug>SuperTabForward <c-r>=SuperTab('n')<cr>
-  imap <script> <Plug>SuperTabBackward <c-r>=SuperTab('p')<cr>
+  imap <silent> <script> <Plug>SuperTabForward <c-r>=SuperTab('n')<cr>
+  imap <silent> <script> <Plug>SuperTabBackward <c-r>=SuperTab('p')<cr>
 
   let s:has_dict_maparg = v:version > 703 || (v:version == 703 && has('patch32'))
 
@@ -1008,8 +1008,8 @@ endfunction " }}}
     endif
   endif
 
-  exec 'imap ' . g:SuperTabMappingForward . ' <Plug>SuperTabForward'
-  exec 'imap ' . g:SuperTabMappingBackward . ' <Plug>SuperTabBackward'
+  exec 'imap <silent> ' . g:SuperTabMappingForward . ' <Plug>SuperTabForward'
+  exec 'imap <silent> ' . g:SuperTabMappingBackward . ' <Plug>SuperTabBackward'
 
   if g:SuperTabCrMapping
     let expr_map = 0
